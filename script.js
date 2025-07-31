@@ -36,3 +36,39 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+/* 
+        <div class="col-md-4">
+            <div class="team-card">
+                <img src="" alt="Marco Bianchi">
+                <div class="info">
+                    <h5>Marco Bianchi</h5>
+                    <p>Designer</p>
+                    <a href="mailto:marcobianchi@team.com">marcobianchi@team.com</a>
+                </div>
+            </div>
+        </div>*/
+
+
+const rowEl = document.getElementById('teamMember');
+
+
+for (let i = 0; i < teamMembers.length; i++){
+  const member = teamMembers[i];
+  //console.log(member.name);
+
+  const cardMarkup = `
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="team-card">
+                <img src="${member.img}" alt="">
+                <div class="info">
+                    <h5>${member.name}</h5>
+                    <p>${member.role}</p>
+                    <a href="mailto:${member.email}">${member.email}</a>
+                </div>
+            </div>
+        </div>
+  `
+  
+console.log(cardMarkup);
+rowEl.insertAdjacentHTML("beforeend", cardMarkup)
+}

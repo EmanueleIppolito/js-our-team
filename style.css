@@ -1,0 +1,44 @@
+.team-card {
+  display: flex;
+  background-color: #000;
+  color: #fff;
+  min-height: 120px;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+
+.team-card img {
+  width: 120px;
+  object-fit: cover;
+}
+
+.team-card .info {
+  padding: 15px;
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.team-card .info h5 {
+  font-weight: 700;
+}
+
+.team-card .info p {
+  margin: 0;
+}
+
+.team-card .info a {
+  color: #00bfff;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.team-title {
+  font-weight: 700;
+  color: #f54291;
