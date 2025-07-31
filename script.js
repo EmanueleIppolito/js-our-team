@@ -50,12 +50,44 @@ const teamMembers = [
 
 
 const rowEl = document.getElementById('teamMember');
+const nameEl = document.getElementById('nome');
+const roleEl = document.getElementById('role');
+const imageEl = document.getElementById('image');
+const emailEl = document.getElementById('email');
+const formEl = document.getElementById('newMember');
 
 
-for (let i = 0; i < teamMembers.length; i++){
+
+
+
+
+
+for (let i = 0; i < teamMembers.length; i++) {
   const member = teamMembers[i];
-  //console.log(member.name);
+  createCard(member);
+}
 
+formEl.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Crea un nuovo oggetto membro con i valori degli input
+  const newMember = {
+    name: nameEl.value,
+    role: roleEl.value,
+    email: emailEl.value,
+    img: imageEl.value
+  };
+
+  teamMembers.push(newMember);
+
+  // Crea la nuova scheda
+  createCard(newMember);
+  formEl.reset();
+
+});
+
+
+function createCard(member) {
   const cardMarkup = `
         <div class="col-12 col-sm-6 col-md-4 mb-4">
             <div class="team-card">
@@ -67,8 +99,6 @@ for (let i = 0; i < teamMembers.length; i++){
                 </div>
             </div>
         </div>
-  `
-  
-console.log(cardMarkup);
-rowEl.insertAdjacentHTML("beforeend", cardMarkup)
+  `;
+  rowEl.insertAdjacentHTML("beforeend", cardMarkup);
 }
